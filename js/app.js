@@ -200,8 +200,17 @@
 
   function calculateTotalOrderPrice(service, quantity) {
     if (!service) return 0;
+
     const pricePer1k = getSellingPricePer1k(service.base_price_1k);
-    return (pricePer1k * quantity) / 1000;
+    const calculatedTotalUSD = (pricePer1k * quantity) / 1000;
+
+    // فرض حد أدنى لإجمالي الطلب بالعملة المحلية، ثم إرجاع القيمة بالدولار
+    // حتى تظل بقية الواجهة والتحويلات متوافقة مع طريقة الحساب الحالية.
+    const minimumOrderAmount = CONFIG.currency.minimumOrderAmount || 0;
+    const localCurrencyRate = CONFIG.currency.rates[CONFIG.currency.defaultRate]?.rate || 1;
+    const minimumOrderUSD = minimumOrderAmount / localCurrencyRate;
+
+    return Math.max(calculatedTotalUSD, minimumOrderUSD);
   }
 
   function formatCurrency(amountUSD, currencyCode = state.currentCurrency) {
