@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#060b14">
+  <title>كيدي ستور | KD STORE — خدمات السوشيال ميديا والاشتراكات الرقمية</title>
+  
+  <!-- SEO & OpenGraph Meta Tags for Link Preview -->
+  <meta name="description" content="كيدي ستور (KD STORE) — متجرك الأول لخدمات تزويد السوشيال ميديا، المتابعين، التفاعلات، واشتراكات الذكاء الاصطناعي بأسعار منافسة وسرعة فائقة.">
+  <meta name="keywords" content="كيدي ستور, KD STORE, متابعين تيك توك, متابعين انستغرام, خدمات فيسبوك, اشتراك Gemini Pro, تسويق رقمي, زيادة تفاعلات">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="كيدي ستور | KD STORE — خدمات السوشيال ميديا والاشتراكات الرقمية">
+  <meta property="og:description" content="أسرع وأضمن منصة لتزويد المتابعين، التفاعلات، واشتراكات الذكاء الاصطناعي الرسمي. تسليم فوري ودعم 24/7 عبر الواتساب.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="كيدي ستور | KD STORE">
+  <meta name="twitter:description" content="خدمات السوشيال ميديا والاشتراكات الرقمية بأعلى معايير الأمان والسرعة.">
+  
+  <!-- FontAwesome 6 Pro/Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Dynamic Announcement Ticker Bar -->
+  <div class="ticker-bar" id="tickerBar">
+    <div class="container ticker-inner">
+      <span class="ticker-badge"><i class="fas fa-bullhorn"></i> تنبيه</span>
+      <div class="ticker-content" id="tickerContent">
+        <!-- Filled dynamically by JS -->
+      </div>
+      <button class="ticker-close" id="tickerCloseBtn" title="إغلاق">&times;</button>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="brand">
+        <div class="brand-logo-wrap">
+          <img src="assets/logo_icon.png" alt="كيدي ستور KD STORE" class="brand-logo-img">
+        </div>
+        <div class="brand-info">
+          <h1>كيدي ستور <span class="en">KD STORE</span></h1>
+          <p>أفضل وأسرع خدمات الدعم والترويج</p>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <!-- Currency Selector -->
+        <div class="currency-picker">
+          <i class="fas fa-coins currency-icon"></i>
+          <select id="currencySelect" class="currency-select" title="اختر العملة">
+            <option value="SDG" selected>SDG — جنيه سوداني</option>
+            <option value="USD">USD — دولار ($)</option>
+          </select>
+        </div>
+
+        <!-- Track Orders Button -->
+        <button id="trackOrderBtn" class="btn btn-glass btn-sm">
+          <i class="fas fa-radar"></i>
+          <span>تتبع طلبك</span>
+        </button>
+
+        <!-- WhatsApp Header Button -->
+        <a href="https://wa.me/249916052699" target="_blank" class="btn btn-whatsapp btn-sm">
+          <i class="fab fa-whatsapp"></i>
+          <span>دعم مباشر</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>خدمات فورية بأعلى جودة وضمان حقيقي</span>
+        </div>
+
+        <h2 class="hero-title">
+          ارتقِ بحساباتك ومبيعاتك مع <span class="gradient-text">كيدي ستور</span>
+        </h2>
+        <p class="hero-subtitle">
+          اختر المنصة وتصفح أفضل خدمات السوشيال ميديا بأسعار منافسة وتسليم فوري مضمون.
+        </p>
+
+        <!-- Feature Pills -->
+        <div class="features-pills">
+          <div class="feature-pill"><i class="fas fa-shield-check"></i> ضمان وتعويض رسمي</div>
+          <div class="feature-pill"><i class="fas fa-bolt-lightning"></i> تنفيذ فوري وتلقائي</div>
+          <div class="feature-pill"><i class="fas fa-headset"></i> دعم متواصل عبر واتساب</div>
+          <div class="feature-pill"><i class="fas fa-tag"></i> أسعار منافسة ومخفضة</div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="ابحث بالخدمة، رقم #ID، أو المنصة..." autocomplete="off">
+            <i class="fas fa-magnifying-glass search-icon"></i>
+            <button id="clearSearchBtn" class="clear-search-btn" title="مسح البحث">
+              <i class="fas fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Special Gemini Promo Banner -->
+        <div class="gemini-banner">
+          <div class="gemini-info">
+            <div class="gemini-icon">
+              <i class="fas fa-microchip-ai"></i>
+            </div>
+            <div class="gemini-text" style="text-align: right;">
+              <h3>اشتراك Google Gemini Pro <span class="gemini-badge">عرض حصري</span></h3>
+              <p>خطة 18 شهر كاملة لأقوى نماذج الذكاء الاصطناعي مع تفعيل فوري ومباشر.</p>
+            </div>
+          </div>
+          <div class="gemini-action">
+            <span class="gemini-price" id="geminiPriceDisplay">...</span>
+            <button id="geminiOrderBtn" class="btn btn-whatsapp btn-sm">
+              <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Platform Selection Section (Large Visual Buttons) -->
+    <section class="platforms-section" id="platformsSection">
+      <div class="container">
+        <div class="section-title-box">
+          <span class="section-badge"><i class="fas fa-layer-group"></i> الأقسام والمنصات</span>
+          <h3 class="section-heading">اختر المنصة للبدء</h3>
+          <p class="section-desc">اضغط على أي منصة لعرض خدماتها المتاحة فورياً</p>
+        </div>
+
+        <!-- Large Platform Cards Grid -->
+        <div class="platform-cards-grid" id="platformCardsGrid">
+          <!-- Dynamically Injected with Rich Brand Cards -->
+        </div>
+
+        <!-- Sub-Type Filter Tags Bar (Appears when a category is selected) -->
+        <div class="subtypes-bar" id="subTypesBar" style="display: none;">
+          <div class="subtypes-title"><i class="fas fa-filter"></i> تصفية حسب النوع:</div>
+          <div class="subtypes-list" id="subTypesList">
+            <!-- Dynamically Injected -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-section" id="servicesSection">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title" id="currentSectionTitle">جميع الخدمات المتاحة</h3>
+            <span id="resultsCount" class="results-stats"></span>
+          </div>
+          <div class="services-sort-box">
+            <span style="font-size: 0.82rem; color: var(--text-muted);"><i class="fas fa-sort-amount-down"></i> ترتيب:</span>
+            <select id="servicesSort" class="sort-select">
+              <option value="default">الافتراضي (الأكثر طلباً)</option>
+              <option value="price-asc">السعر: من الأقل للأعلى</option>
+              <option value="price-desc">السعر: من الأعلى للأقل</option>
+              <option value="guarantee">حسب مدة الضمان</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Services Grid Container -->
+        <div class="services-grid" id="servicesGrid">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Load More Button -->
+        <div class="pagination-wrapper" id="loadMoreWrapper" style="display: none;">
+          <button id="loadMoreBtn" class="btn btn-glass">
+            <i class="fas fa-arrow-down"></i> عرض المزيد من الخدمات
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Order Modal -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <h3 id="modalServiceTitle">اسم الخدمة</h3>
+          <div style="display: flex; gap: 8px; align-items: center; margin-top: 4px;">
+            <span id="modalServiceId" class="modal-id-pill">#000</span>
+            <span id="modalServiceCategory" class="modal-cat-pill">المنصة</span>
+          </div>
+        </div>
+        <button class="modal-close" id="closeOrderModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-info-row">
+          <div class="modal-info-item">
+            <span class="info-label"><i class="fas fa-shield-alt"></i> الضمان:</span>
+            <span class="info-val text-green" id="modalServiceGuarantee">ضمان 30 يوم</span>
+          </div>
+          <div class="modal-info-item">
+            <span class="info-label"><i class="fas fa-bolt"></i> السرعة:</span>
+            <span class="info-val text-cyan" id="modalServiceSpeed">فوري وسريع</span>
+          </div>
+          <div class="modal-info-item">
+            <span class="info-label"><i class="fas fa-tag"></i> السعر لكل 1000:</span>
+            <span class="info-val text-amber" id="modalServicePrice1k">$0.00</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px; font-size: 0.82rem; color: var(--text-muted);" id="modalServiceLimits">
+          الحد الأدنى للطلب: 100 | الحد الأقصى: 10,000
+        </div>
+
+        <!-- Quantity Selection with Quick Step Buttons -->
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label class="form-label" for="orderQtyInput" style="margin-bottom: 0;">الكمية المطلوبة:</label>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" id="qtyFeedback">1,000 وحدة</span>
+          </div>
+          
+          <input type="number" id="orderQtyInput" class="form-control" placeholder="أدخل الكمية">
+          
+          <div class="slider-container">
+            <input type="range" id="orderQtySlider" class="slider-input">
+          </div>
+
+          <!-- Quick Quantity Buttons -->
+          <div class="quick-qty-group">
+            <button type="button" class="quick-qty-btn" data-qty="100">+100</button>
+            <button type="button" class="quick-qty-btn" data-qty="500">+500</button>
+            <button type="button" class="quick-qty-btn" data-qty="1000">+1,000</button>
+            <button type="button" class="quick-qty-btn" data-qty="5000">+5,000</button>
+            <button type="button" class="quick-qty-btn" data-qty="10000">+10,000</button>
+            <button type="button" class="quick-qty-btn" data-action="max">الحد الأقصى</button>
+          </div>
+        </div>
+
+        <!-- Link / Username Input -->
+        <div class="form-group">
+          <label class="form-label" for="orderLinkInput">
+            رابط الحساب أو المنشور <span style="color: var(--accent-rose);">*</span>:
+          </label>
+          <input type="url" id="orderLinkInput" class="form-control" placeholder="https://instagram.com/username أو رابط الفيديو..." required>
+        </div>
+
+        <!-- Live Price Calculation Result Card -->
+        <div class="order-calc-card">
+          <div>
+            <span style="font-size: 0.82rem; color: var(--text-muted); display: block;">الإجمالي شامل العمولة:</span>
+            <div class="calc-price-big" id="calcTotalPrice">$0.00</div>
+          </div>
+          <div style="text-align: left;">
+            <div class="calc-price-alt" id="calcAltPrice">(0 ج.س)</div>
+            <span style="font-size: 0.72rem; color: var(--accent-green); font-weight: 700;">تسليم مباشر ✓</span>
+          </div>
+        </div>
+
+        <!-- Order Actions -->
+        <div style="display: grid; gap: 10px;">
+          <button id="whatsappOrderBtn" class="btn btn-whatsapp" style="width: 100%; font-size: 1.05rem;">
+            <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
+          </button>
+          <button id="copyOrderBtn" class="btn btn-glass" style="width: 100%;">
+            <i class="far fa-copy"></i> نسخ تفاصيل الطلب
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Tracking Modal -->
+  <div class="modal-overlay" id="trackModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3><i class="fas fa-search-location" style="color: var(--accent-cyan);"></i> تتبع حالة الطلب</h3>
+        <button class="modal-close" id="closeTrackModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+          أدخل رقم الطلب الخاص بك للاستعلام المباشر عن حالة التنفيذ والكمية المتبقية:
+        </p>
+
+        <div class="form-group">
+          <input type="number" id="trackOrderInput" class="form-control" placeholder="مثال: 12550">
+        </div>
+
+        <button id="submitTrackBtn" class="btn btn-primary" style="width: 100%;">
+          <i class="fas fa-search"></i> استعلام عن الطلب
+        </button>
+
+        <!-- Live Result Card -->
+        <div id="trackResultBox" class="tracking-result-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Details Modal -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-card modal-card--lg">
+      <div class="modal-head">
+        <h3><i class="fas fa-circle-info" style="color: var(--accent-cyan);"></i> تفاصيل الخدمة الكاملة</h3>
+        <button class="modal-close" id="closeDetailsModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="detailsModalBody">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/249916052699" target="_blank" class="floating-whatsapp" id="floatingWhatsapp" title="تواصل معنا عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+    <span class="pulse-ring"></span>
+    <span class="fab-tooltip">الدعم المباشر</span>
+  </a>
+
+  <!-- Mobile Bottom Navigation -->
+  <div class="mobile-nav">
+    <a href="#" class="mobile-nav-item active">
+      <i class="fas fa-home"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#platformsSection" class="mobile-nav-item">
+      <i class="fas fa-layer-group"></i>
+      <span>المنصات</span>
+    </a>
+    <a href="javascript:void(0)" id="mobileTrackBtn" class="mobile-nav-item">
+      <i class="fas fa-search-location"></i>
+      <span>تتبع الطلب</span>
+    </a>
+    <a href="https://wa.me/249916052699" target="_blank" class="mobile-nav-item">
+      <i class="fab fa-whatsapp"></i>
+      <span>الدعم</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="assets/logo_full.png" alt="كيدي ستور" class="footer-logo-img">
+          </div>
+          <h2>كيدي ستور — KD STORE</h2>
+          <p style="font-size: 0.9rem; line-height: 1.7; max-width: 450px;">
+            منصتك الموثوقة للحصول على أقوى خدمات الدعم والترويج الرقمي لكافة وسائل التواصل الاجتماعي والاشتراكات الرقمية بأعلى معايير الأمان والسرعة.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>أقسام سريعة</h4>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="selectPlatform('tiktok')"><i class="fab fa-tiktok"></i> خدمات تيك توك</a></li>
+            <li><a href="javascript:void(0)" onclick="selectPlatform('instagram')"><i class="fab fa-instagram"></i> خدمات انستغرام</a></li>
+            <li><a href="javascript:void(0)" onclick="selectPlatform('telegram')"><i class="fab fa-telegram-plane"></i> خدمات تيليجرام</a></li>
+            <li><a href="javascript:void(0)" onclick="selectPlatform('facebook')"><i class="fab fa-facebook-f"></i> خدمات فيسبوك</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>الدعم والمساعدة</h4>
+          <ul>
+            <li><a href="https://wa.me/249916052699" target="_blank"><i class="fab fa-whatsapp"></i> تواصل عبر واتساب</a></li>
+            <li><a href="javascript:void(0)" onclick="document.getElementById('trackOrderBtn').click()"><i class="fas fa-search-location"></i> تتبع الطلبات</a></li>
+            <li><a href="javascript:void(0)"><i class="fas fa-shield-alt"></i> سياسة الضمان والتعويض</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2026 كيدي ستور — KD STORE</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/services-data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

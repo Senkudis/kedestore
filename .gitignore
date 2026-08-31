@@ -1,0 +1,14 @@
+# Temporary and dump files
+*.txt
+*.log
+.DS_Store
+node_modules/
+
+# Keep main project files
+!assets/
+!css/
+!js/
+!index.html
+!server.js
+!services.json
+!README.md
