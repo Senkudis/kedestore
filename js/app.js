@@ -186,7 +186,11 @@
   /**
    * Price Calculations with Profit Margin & Currency Conversion
    */
-  function getSellingPricePer1k(basePrice1k) {
+  function getSellingPricePer1k(basePrice1k, fixedSellingPrice1k = null) {
+    if (Number.isFinite(fixedSellingPrice1k) && fixedSellingPrice1k > 0) {
+      return fixedSellingPrice1k;
+    }
+
     const margin = CONFIG.profitMargin || 0.35;
     let sellingPrice = basePrice1k * (1 + margin);
     
@@ -201,7 +205,7 @@
   function calculateTotalOrderPrice(service, quantity) {
     if (!service) return 0;
 
-    const pricePer1k = getSellingPricePer1k(service.base_price_1k);
+    const pricePer1k = getSellingPricePer1k(service.base_price_1k, service.fixed_selling_price_1k);
     return (pricePer1k * quantity) / 1000;
   }
 
@@ -417,7 +421,7 @@
 
     let html = '';
     servicesToShow.forEach(service => {
-      const pricePer1k = getSellingPricePer1k(service.base_price_1k);
+      const pricePer1k = getSellingPricePer1k(service.base_price_1k, service.fixed_selling_price_1k);
       const formattedPrice = formatCurrency(pricePer1k);
       const alternatePrice = state.currentCurrency === 'USD'
         ? formatCurrency(pricePer1k, 'SDG')
@@ -539,8 +543,7 @@
   function openDetailsModal(service) {
     if (!elements.detailsModal || !elements.detailsModalBody) return;
 
-    const pricePer1k = getSellingPricePer1k(service.base_price_1k);
-    const formattedPrice = formatCurrency(pricePer1k);
+    const pricePer1k = getSellingPricePer1k(service.base_price_1k, service.fixed_selling_price_1k);
     const localPrice = formatCurrency(pricePer1k, 'SDG');
     const usdPrice = formatCurrency(pricePer1k, 'USD');
 
@@ -642,7 +645,7 @@
       elements.whatsappOrderBtn.style.boxShadow = '0 8px 20px rgba(37, 211, 102, 0.25)';
     }
 
-    const pricePer1k = getSellingPricePer1k(service.base_price_1k);
+    const pricePer1k = getSellingPricePer1k(service.base_price_1k, service.fixed_selling_price_1k);
     elements.modalServicePrice1k.textContent = formatCurrency(pricePer1k, 'USD');
     elements.modalServiceLimits.textContent = `الحد الأدنى للطلب: ${service.min.toLocaleString()} | الحد الأقصى: ${service.max.toLocaleString()}`;
 
