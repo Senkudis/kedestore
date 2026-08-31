@@ -419,6 +419,9 @@
     servicesToShow.forEach(service => {
       const pricePer1k = getSellingPricePer1k(service.base_price_1k);
       const formattedPrice = formatCurrency(pricePer1k);
+      const alternatePrice = state.currentCurrency === 'USD'
+        ? formatCurrency(pricePer1k, 'SDG')
+        : formatCurrency(pricePer1k, 'USD');
 
       const isReaction = Boolean(service.sub_type === 'reactions' || service.reaction_type);
 
@@ -463,6 +466,7 @@
             <div class="sc-price">
               <span class="sc-price-v">${formattedPrice}</span>
               <span class="sc-price-l">/1000</span>
+              <small class="sc-price-alt">(${alternatePrice})</small>
             </div>
             <div class="sc-limits">
               <b>${service.min.toLocaleString()}</b>
@@ -537,6 +541,8 @@
 
     const pricePer1k = getSellingPricePer1k(service.base_price_1k);
     const formattedPrice = formatCurrency(pricePer1k);
+    const localPrice = formatCurrency(pricePer1k, 'SDG');
+    const usdPrice = formatCurrency(pricePer1k, 'USD');
 
     elements.detailsModalBody.innerHTML = `
       <div style="text-align: right;">
@@ -583,7 +589,8 @@
         <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: var(--r2); padding: 14px; margin: 16px 0; display: flex; align-items: center; justify-content: space-between;">
           <div>
             <span style="font-size: 0.78rem; color: var(--t3); display: block;">السعر الإجمالي لكل 1,000:</span>
-            <span style="font-size: 1.3rem; font-weight: 900; color: var(--gp);">${formattedPrice}</span>
+            <span style="font-size: 1.3rem; font-weight: 900; color: var(--gp);">${localPrice}</span>
+            <span style="font-size: 0.9rem; color: var(--t2); display: block; margin-top: 4px;">ما يعادل ${usdPrice}</span>
           </div>
           <button class="btn btn-whatsapp btn-sm order-now-from-details" data-id="${service.id}">
             <i class="fab fa-whatsapp"></i> اطلب الخدمة الآن
