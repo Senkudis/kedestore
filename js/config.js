@@ -26,13 +26,11 @@ const CONFIG = {
     symbol: "ج.س",
     code: "SDG",
     // أسعار الصرف للتحويل السريع — 1 دولار = 7500 جنيه سوداني
-    // الحد الأدنى لإجمالي أي طلب بالعملة المحلية
     rates: {
       USD: { symbol: "$",    rate: 1,     name: "دولار أمريكي (USD)" },
       SDG: { symbol: "ج.س", rate: 7500,  name: "جنيه سوداني (SDG)" }
     },
-    defaultRate: "SDG",
-    minimumOrderAmount: 1000
+    defaultRate: "SDG"
   },
 
   // إعدادات الـ API المباشر
