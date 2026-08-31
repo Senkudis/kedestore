@@ -436,6 +436,7 @@ const SERVICES_DATA = [
     "min": 50,
     "max": 1000000,
     "base_price_1k": 0.0858,
+    "fixed_selling_price_1k": 0.13333333333333333,
     "has_guarantee": false,
     "guarantee": "بدون ضمان ⚡",
     "guarantee_level": "none",
