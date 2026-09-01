@@ -1,6 +1,6 @@
 /**
  * KD Store - Full Curated Services Database
- * Includes: Best-Price Guaranteed/Non-Guaranteed + Facebook Reactions + Telegram Reactions + WhatsApp Reactions + Instagram Story Views
+ * Auto-synced from provider API
  */
 
 const SERVICES_DATA = [
@@ -485,7 +485,7 @@ const SERVICES_DATA = [
     "glow": "rgba(244, 63, 94, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون ❤️",
     "guarantee_level": "medium",
@@ -511,7 +511,7 @@ const SERVICES_DATA = [
     "glow": "rgba(234, 179, 8, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون 😲",
     "guarantee_level": "medium",
@@ -537,7 +537,7 @@ const SERVICES_DATA = [
     "glow": "rgba(56, 189, 248, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون 😢",
     "guarantee_level": "medium",
@@ -563,7 +563,7 @@ const SERVICES_DATA = [
     "glow": "rgba(250, 204, 21, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون 😂",
     "guarantee_level": "medium",
@@ -589,7 +589,7 @@ const SERVICES_DATA = [
     "glow": "rgba(24, 119, 242, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون 👍",
     "guarantee_level": "medium",
@@ -615,7 +615,7 @@ const SERVICES_DATA = [
     "glow": "rgba(245, 158, 11, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون 🤗",
     "guarantee_level": "medium",
@@ -641,7 +641,7 @@ const SERVICES_DATA = [
     "glow": "rgba(234, 88, 12, 0.5)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.1538,
+    "base_price_1k": 0.0961,
     "has_guarantee": true,
     "guarantee": "وصول فوري ومضمون 😡",
     "guarantee_level": "medium",
@@ -1265,4 +1265,3 @@ const SERVICES_DATA = [
     "speed": "سريع فوري 🚀"
   }
 ];
-window.SERVICES_DATA = SERVICES_DATA;
