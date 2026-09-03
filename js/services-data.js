@@ -412,7 +412,7 @@ const SERVICES_DATA = [
     "glow": "rgba(24, 119, 242, 0.35)",
     "min": 10,
     "max": 1000000,
-    "base_price_1k": 0.2233,
+    "base_price_1k": 0.1654,
     "has_guarantee": true,
     "guarantee": "ضمان تعويض 30 يوم ♻️",
     "guarantee_level": "medium",
